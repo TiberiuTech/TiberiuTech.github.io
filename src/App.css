@@ -1,0 +1,294 @@
+.App {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.main-content {
+  padding-top: 100px; /* Pentru a evita suprapunerea cu nav-bar-ul fix */
+}
+
+/* Prima secțiune - Home */
+.home-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  position: relative;
+}
+
+.home-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  width: 100%;
+  gap: 4rem;
+}
+
+.left-section {
+  flex: 1;
+  text-align: left;
+}
+
+.left-section .gradient-text {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 50%, #667eea 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 6s ease-in-out infinite;
+  background-size: 200% 200%;
+}
+
+.home-description {
+  font-size: 1.3rem;
+  color: white;
+  line-height: 1.6;
+  opacity: 0.9;
+  margin-bottom: 2rem;
+}
+
+.right-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image {
+  width: 400px;
+  height: 400px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.2rem;
+  opacity: 0.7;
+}
+
+/* Mouse Scroll */
+.mouse_scroll {
+  display: block;
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 24px;
+  height: 100px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.mouse {
+  height: 42px;
+  width: 24px;
+  border-radius: 14px;
+  transform: none;
+  border: 2px solid white;
+}
+
+.wheel {
+  height: 4px;
+  width: 4px;
+  display: block;
+  margin: 5px auto;
+  background: white;
+  position: relative;
+  border: 2px solid #fff;
+  border-radius: 8px;
+  animation: mouse-wheel 0.6s linear infinite;
+}
+
+.m_scroll_arrows {
+  display: block;
+  width: 16px;
+  height: 16px;
+  transform: rotate(45deg);
+  border-right: 2px solid white;
+  border-bottom: 2px solid white;
+  margin: 0 0 3px 4px;
+}
+
+.unu {
+  margin-top: 1px;
+  animation: mouse-scroll 1s infinite;
+  animation-delay: 0.1s;
+  animation-direction: alternate;
+}
+
+.doi {
+  margin-top: -6px;
+  animation: mouse-scroll 1s infinite;
+  animation-delay: 0.2s;
+  animation-direction: alternate;
+}
+
+.trei {
+  margin-top: -6px;
+  animation: mouse-scroll 1s infinite;
+  animation-delay: 0.3s;
+  animation-direction: alternate;
+}
+
+@keyframes mouse-wheel {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+}
+
+@keyframes mouse-scroll {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* A doua secțiune - Projects */
+.projects-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.projects-content {
+  text-align: center;
+  max-width: 800px;
+}
+
+.projects-content .gradient-text {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 50%, #667eea 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 6s ease-in-out infinite;
+  background-size: 200% 200%;
+}
+
+.projects-description {
+  font-size: 1.2rem;
+  color: white;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* A treia secțiune - Contact */
+.contact-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.contact-content {
+  text-align: center;
+  max-width: 800px;
+}
+
+.contact-content .gradient-text {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 50%, #667eea 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 6s ease-in-out infinite;
+  background-size: 200% 200%;
+}
+
+.contact-description {
+  font-size: 1.2rem;
+  color: white;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  10% {
+    background-position: 10% 50%;
+  }
+  20% {
+    background-position: 20% 50%;
+  }
+  30% {
+    background-position: 30% 50%;
+  }
+  40% {
+    background-position: 40% 50%;
+  }
+  50% {
+    background-position: 50% 50%;
+  }
+  60% {
+    background-position: 60% 50%;
+  }
+  70% {
+    background-position: 70% 50%;
+  }
+  80% {
+    background-position: 80% 50%;
+  }
+  90% {
+    background-position: 90% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .home-content {
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+  }
+  
+  .left-section {
+    text-align: center;
+  }
+  
+  .left-section .gradient-text {
+    font-size: 2.5rem;
+  }
+  
+  .home-description {
+    font-size: 1.1rem;
+  }
+  
+  .hero-image {
+    width: 300px;
+    height: 300px;
+  }
+  
+  .projects-content .gradient-text,
+  .contact-content .gradient-text {
+    font-size: 2.5rem;
+  }
+} 
