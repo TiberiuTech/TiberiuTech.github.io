@@ -9,12 +9,13 @@
 
 /* Prima secțiune - Home */
 .home-section {
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  padding: 2rem;
+  padding: 10rem 2rem 0 2rem; /* padding top mai mare pentru spațiu sub navbar */
   position: relative;
+  box-sizing: border-box;
 }
 
 .home-content {
@@ -77,11 +78,11 @@
 .mouse_scroll {
   display: block;
   position: absolute;
-  bottom: 2rem;
+  bottom: 8rem;
   left: 50%;
   transform: translateX(-50%);
   width: 24px;
-  height: 100px;
+  height: 80px; /* mai mic decât înainte */
   z-index: 10;
   pointer-events: none;
 }
@@ -191,6 +192,119 @@
   color: white;
   line-height: 1.6;
   opacity: 0.9;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.project-card {
+  perspective: 1200px;
+  width: 100%;
+  min-width: 260px;
+  min-height: 370px;
+  height: 100%;
+  cursor: pointer;
+  outline: none;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.7s cubic-bezier(0.4,0.2,0.2,1);
+  transform-style: preserve-3d;
+}
+
+.project-card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background: rgba(255,255,255,0.08);
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(79,172,254,0.10);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 1.5rem 1rem 1rem 1rem;
+}
+
+.card-front {
+  z-index: 2;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.project-image {
+  width: 100%;
+  max-width: 260px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 1.2rem;
+  align-self: flex-end;
+}
+
+.project-info {
+  width: 100%;
+  text-align: center;
+}
+
+.project-info h3 {
+  margin-bottom: 0.5rem;
+  color: #00f2fe;
+}
+
+.project-info p {
+  color: #fff;
+  opacity: 0.9;
+  margin-bottom: 1rem;
+}
+
+.demo-btn {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 50%, #667eea 100%);
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  padding: 0.6rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  font-size: 1rem;
+}
+
+.demo-btn:hover {
+  background: linear-gradient(135deg, #667eea 0%, #00f2fe 100%);
+  transform: translateY(-2px) scale(1.04);
+}
+
+@media (max-width: 1000px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  .project-card {
+    min-width: 0;
+  }
 }
 
 /* A treia secțiune - Contact */

@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import NavBar from './components/NavBar';
 import './App.css';
 
 function App() {
+  const [flippedCards, setFlippedCards] = useState([false, false, false, false, false, false]);
+
+  const handleCardFlip = (idx) => {
+    setFlippedCards(cards => cards.map((f, i) => i === idx ? !f : f));
+  };
+
   const handleLogoClick = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -46,7 +52,32 @@ function App() {
             <p className="projects-description">
               Aici vei găsi proiectele mele recente și tehnologiile folosite.
             </p>
-            {/* Aici vei adăuga proiectele */}
+            <div className="projects-grid">
+              {[1,2,3,4,5,6].map((id, idx) => (
+                <div
+                  className={`project-card${flippedCards[idx] ? ' flipped' : ''}`}
+                  key={id}
+                  tabIndex={0}
+                  onClick={() => handleCardFlip(idx)}
+                  onKeyDown={e => (e.key === 'Enter' || e.key === ' ') && handleCardFlip(idx)}
+                >
+                  <div className="card-inner">
+                    <div className="card-front">
+                      <img src={`https://placehold.co/300x180?text=Project+${id}`} alt={`Project ${id}`} className="project-image" />
+                      <div className="project-info">
+                        <h3>Proiect {id}</h3>
+                        <p>Descriere scurtă pentru proiectul {id}.</p>
+                        <button className="demo-btn">Demo</button>
+                      </div>
+                    </div>
+                    <div className="card-back">
+                      <h3>Detalii Proiect {id}</h3>
+                      <p>Tehnologii folosite, detalii suplimentare sau link-uri.</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
