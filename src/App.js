@@ -88,7 +88,12 @@ function App() {
             <p className="contact-description">
               Sunt disponibil pentru proiecte noi și colaborări interesante.
             </p>
-            {/* Aici vei adăuga informațiile de contact */}
+            <form className="contact-form">
+              <input type="text" name="nume" placeholder="Nume" required />
+              <input type="email" name="email" placeholder="Email" required />
+              <textarea name="mesaj" placeholder="Mesaj" rows="5" required></textarea>
+              <button type="submit" className="contact-btn">Trimite</button>
+            </form>
           </div>
         </section>
       </main>
