@@ -4,9 +4,19 @@ import './App.css';
 
 function App() {
   const [flippedCards, setFlippedCards] = useState([false, false, false, false, false, false]);
+  const [flippedGames, setFlippedGames] = useState([false, false, false, false, false, false]);
+  const [flippedCyber, setFlippedCyber] = useState([false, false, false, false, false, false]);
 
   const handleCardFlip = (idx) => {
     setFlippedCards(cards => cards.map((f, i) => i === idx ? !f : f));
+  };
+
+  const handleGamesFlip = (idx) => {
+    setFlippedGames(cards => cards.map((f, i) => i === idx ? !f : f));
+  };
+
+  const handleCyberFlip = (idx) => {
+    setFlippedCyber(cards => cards.map((f, i) => i === idx ? !f : f));
   };
 
   const handleLogoClick = () => {
@@ -45,13 +55,10 @@ function App() {
           </div>
         </section>
 
-        {/* A doua pagină - Projects */}
+        {/* Secțiunea Websites */}
         <section className="projects-section">
           <div className="projects-content">
-            <h1 className="gradient-text">My Projects</h1>
-            <p className="projects-description">
-              Aici vei găsi proiectele mele recente și tehnologiile folosite.
-            </p>
+            <h1 className="gradient-text">Websites</h1>
             <div className="projects-grid">
               {[1,2,3,4,5,6].map((id, idx) => (
                 <div
@@ -63,15 +70,81 @@ function App() {
                 >
                   <div className="card-inner">
                     <div className="card-front">
-                      <img src={`https://placehold.co/300x180?text=Project+${id}`} alt={`Project ${id}`} className="project-image" />
+                      <img src={`https://placehold.co/300x180?text=Website+${id}`} alt={`Website ${id}`} className="project-image" />
                       <div className="project-info">
-                        <h3>Proiect {id}</h3>
-                        <p>Descriere scurtă pentru proiectul {id}.</p>
+                        <h3>Website {id}</h3>
+                        <p>Descriere scurtă pentru website-ul {id}.</p>
                         <button className="demo-btn">Demo</button>
                       </div>
                     </div>
                     <div className="card-back">
-                      <h3>Detalii Proiect {id}</h3>
+                      <h3>Detalii Website {id}</h3>
+                      <p>Tehnologii folosite, detalii suplimentare sau link-uri.</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Secțiunea Games */}
+        <section className="projects-section">
+          <div className="projects-content">
+            <h1 className="gradient-text">Games</h1>
+            <div className="projects-grid">
+              {[1,2,3,4,5,6].map((id, idx) => (
+                <div
+                  className={`project-card${flippedGames[idx] ? ' flipped' : ''}`}
+                  key={`game-${id}`}
+                  tabIndex={0}
+                  onClick={() => handleGamesFlip(idx)}
+                  onKeyDown={e => (e.key === 'Enter' || e.key === ' ') && handleGamesFlip(idx)}
+                >
+                  <div className="card-inner">
+                    <div className="card-front">
+                      <img src={`https://placehold.co/300x180?text=Game+${id}`} alt={`Game ${id}`} className="project-image" />
+                      <div className="project-info">
+                        <h3>Game {id}</h3>
+                        <p>Descriere scurtă pentru jocul {id}.</p>
+                        <button className="demo-btn">Demo</button>
+                      </div>
+                    </div>
+                    <div className="card-back">
+                      <h3>Detalii Game {id}</h3>
+                      <p>Tehnologii folosite, detalii suplimentare sau link-uri.</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Secțiunea CyberSecurity */}
+        <section className="projects-section">
+          <div className="projects-content">
+            <h1 className="gradient-text">CyberSecurity</h1>
+            <div className="projects-grid">
+              {[1,2,3,4,5,6].map((id, idx) => (
+                <div
+                  className={`project-card${flippedCyber[idx] ? ' flipped' : ''}`}
+                  key={`cyber-${id}`}
+                  tabIndex={0}
+                  onClick={() => handleCyberFlip(idx)}
+                  onKeyDown={e => (e.key === 'Enter' || e.key === ' ') && handleCyberFlip(idx)}
+                >
+                  <div className="card-inner">
+                    <div className="card-front">
+                      <img src={`https://placehold.co/300x180?text=Cyber+${id}`} alt={`CyberSecurity ${id}`} className="project-image" />
+                      <div className="project-info">
+                        <h3>CyberSecurity {id}</h3>
+                        <p>Descriere scurtă pentru proiectul de securitate {id}.</p>
+                        <button className="demo-btn">Demo</button>
+                      </div>
+                    </div>
+                    <div className="card-back">
+                      <h3>Detalii CyberSecurity {id}</h3>
                       <p>Tehnologii folosite, detalii suplimentare sau link-uri.</p>
                     </div>
                   </div>
