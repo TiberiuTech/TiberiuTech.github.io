@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
 import NavBar from './components/NavBar';
-import ParticlesBackground from './components/ParticlesBackground';
 
 function App() {
   const [flippedCards, setFlippedCards] = useState([false, false, false, false, false, false]);
@@ -26,7 +25,6 @@ function App() {
 
   return (
     <div className="App">
-      <ParticlesBackground />
       <NavBar onLogoClick={handleLogoClick} />
       <main className="main-content">
         {/* Prima pagină - Home */}

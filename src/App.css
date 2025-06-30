@@ -1,10 +1,12 @@
 .App {
   min-height: 100vh;
-  background: #111;
+  background: transparent;
+  position: relative;
 }
 
 .main-content {
   padding-top: 100px; /* Pentru a evita suprapunerea cu nav-bar-ul fix */
+  position: relative;
 }
 
 /* Prima secțiune - Home */
@@ -332,6 +334,7 @@
   align-items: center;
   justify-content: center;
   padding: 2rem;
+  position: relative;
 }
 
 .contact-content {
