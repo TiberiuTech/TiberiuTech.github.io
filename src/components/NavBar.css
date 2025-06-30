@@ -30,19 +30,32 @@
   transform: scale(1.1);
 }
 
-.navbar img {
+.navbar-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 48px;
   height: 48px;
-  filter: invert(1); /* Assuming icons are black and need to be white */
+  font-size: 48px;
+  color: #bbb;
+  transition: color 0.2s, background 0.2s;
+}
+
+.navbar a.active-home .navbar-icon,
+.navbar a.active-projects .navbar-icon,
+.navbar a.active-contact .navbar-icon {
+  color: #00f2fe;
+  background: none;
 }
 
 @media (max-width: 768px) {
   .navbar {
     left: 1rem;
   }
-  .navbar img {
+  .navbar-icon {
     width: 28px;
     height: 28px;
+    font-size: 28px;
   }
 }
 
@@ -51,9 +64,10 @@
     left: 0.5rem;
     gap: 1rem;
   }
-  .navbar img {
+  .navbar-icon {
     width: 24px;
     height: 24px;
+    font-size: 24px;
   }
 }
 
