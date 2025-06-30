@@ -1,22 +1,33 @@
 import React from 'react';
-import './NavBar.css';
+import './Navbar.css';
+import homeIcon from '../icons/home.png';
+import projectsIcon from '../icons/projects.png';
+import contactIcon from '../icons/contact.png';
 
-const NavBar = ({ onLogoClick }) => {
+const Navbar = () => {
   return (
-    <header className="header">
-      <nav className="nav-bar">
-        <div className="nav-brand">
-          <h2 className="gradient-text logo-clickable" onClick={onLogoClick}>
-            Tiberiu's Portfolio
-          </h2>
-        </div>
-        <div className="nav-links">
-          <span className="nav-link gradient-text">Projects</span>
-          <span className="nav-link gradient-text">Contact</span>
-        </div>
-      </nav>
-    </header>
+    <nav className="navbar">
+      <div className="navbar-bg">
+        <ul>
+          <li>
+            <a href="#home">
+              <img src={homeIcon} alt="Home" />
+            </a>
+          </li>
+          <li>
+            <a href="#projects">
+              <img src={projectsIcon} alt="Projects" />
+            </a>
+          </li>
+          <li>
+            <a href="#contact">
+              <img src={contactIcon} alt="Contact" />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
   );
 };
 
-export default NavBar; 
+export default Navbar; 

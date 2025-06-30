@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
-import NavBar from './components/NavBar';
+import Navbar from './components/Navbar';
 
 function App() {
   const [flippedCards, setFlippedCards] = useState([false, false, false, false, false, false]);
@@ -25,10 +25,10 @@ function App() {
 
   return (
     <div className="App">
-      <NavBar onLogoClick={handleLogoClick} />
+      <Navbar />
       <main className="main-content">
         {/* Prima pagină - Home */}
-        <section className="home-section">
+        <section id="home" className="home-section">
           <div className="home-content">
             <div className="left-section">
               <h1 className="gradient-text">Full-Stack Web Developer</h1>
@@ -56,7 +56,7 @@ function App() {
         </section>
 
         {/* Secțiunea Websites */}
-        <section className="projects-section">
+        <section id="projects" className="projects-section">
           <div className="projects-content">
             <h1 className="gradient-text">Websites</h1>
             <div className="projects-grid">
@@ -155,7 +155,7 @@ function App() {
         </section>
 
         {/* A treia pagină - Contact */}
-        <section className="contact-section">
+        <section id="contact" className="contact-section">
           <div className="contact-content">
             <h1 className="gradient-text">Contact</h1>
             <p className="contact-description">
