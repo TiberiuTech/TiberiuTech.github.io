@@ -5,8 +5,7 @@
 }
 
 .main-content {
-  padding-top: 100px; /* Pentru a evita suprapunerea cu nav-bar-ul fix */
-  position: relative;
+  /* padding-top was here to avoid overlap with the fixed nav-bar */
 }
 
 /* Prima secțiune - Home */
