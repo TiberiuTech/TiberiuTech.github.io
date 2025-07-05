@@ -70,7 +70,11 @@ function App() {
                 >
                   <div className="card-inner">
                     <div className="card-front">
-                      <img src={`https://placehold.co/300x180?text=Website+${id}`} alt={`Website ${id}`} className="project-image" />
+                      {id === 1 ? (
+                        <img src={require('./gif/burger.gif')} alt="Burger" className="project-image" />
+                      ) : (
+                        <img src={`https://placehold.co/300x180?text=Website+${id}`} alt={`Website ${id}`} className="project-image" />
+                      )}
                       <div className="project-info">
                         <h3>Website {id}</h3>
                         <p>Descriere scurtă pentru website-ul {id}.</p>

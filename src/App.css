@@ -270,12 +270,15 @@
 
 .project-image {
   width: 100%;
-  max-width: 260px;
-  height: 180px;
+  max-width: 100%;
+  height: 260px;
   object-fit: cover;
   border-radius: 12px;
   margin-bottom: 1.2rem;
   align-self: flex-end;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .project-info {
