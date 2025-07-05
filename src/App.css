@@ -266,6 +266,10 @@
   justify-content: center;
   align-items: center;
   text-align: center;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .project-image {
@@ -281,20 +285,30 @@
   margin-right: auto;
 }
 
+/* Distanță mai mică între imagine și titlul Papa's Burger */
+.project-card:first-child .project-image {
+  margin-bottom: 0;
+}
+
+.project-card:first-child .project-info h3 {
+  margin-top: 0.3rem !important;
+}
+
 .project-info {
   width: 100%;
   text-align: center;
 }
 
 .project-info h3 {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.3rem;
   color: #00f2fe;
 }
 
 .project-info p {
+  margin-top: 0.2rem;
+  margin-bottom: 0.5rem;
   color: #fff;
   opacity: 0.9;
-  margin-bottom: 1rem;
 }
 
 .demo-btn {
@@ -520,4 +534,28 @@
     width: 250px;
     height: 250px;
   }
+}
+
+.github-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0.5rem auto 0 auto;
+  width: 44px;
+  height: 44px;
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 50%, #667eea 100%);
+  border-radius: 8px;
+  color: #fff;
+  font-size: 28px;
+  transition: background 0.2s, transform 0.2s;
+  box-shadow: 0 2px 10px rgba(79,172,254,0.08);
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.github-link:hover {
+  background: linear-gradient(135deg, #667eea 0%, #00f2fe 100%);
+  color: #fff;
+  transform: translateY(-2px) scale(1.08);
 } 
