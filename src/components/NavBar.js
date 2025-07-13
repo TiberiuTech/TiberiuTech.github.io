@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './Navbar.css';
+import './NavBar.css';
 
 const sections = [
   { id: 'home', icon: (
@@ -66,4 +66,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar; 
+export default Navbar;

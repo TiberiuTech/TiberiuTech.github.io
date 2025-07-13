@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
-import Navbar from './components/Navbar';
+import NavBar from './components/NavBar';
 
 function App() {
   const [flippedCards, setFlippedCards] = useState([false, false, false, false, false, false]);
@@ -25,8 +25,8 @@ function App() {
 
   const githubLinks = [
     'https://github.com/TiberiuTech/burger',
-    'https://github.com/user/website2',
-    'https://github.com/user/website3',
+    'https://github.com/TiberiuTech/techshop', 
+    'https://github.com/TiberiuTech/Crypto',
     'https://github.com/user/website4',
     'https://github.com/user/website5',
     'https://github.com/user/website6',
@@ -34,7 +34,7 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar />
+      <NavBar />
       <main className="main-content">
         {/* Prima pagină - Home */}
         <section id="home" className="home-section">
@@ -81,17 +81,25 @@ function App() {
                     <div className="card-front">
                       {id === 1 ? (
                         <img src={require('./gif/burger.gif')} alt="Burger" className="project-image" />
+                      ) : id === 2 ? (
+                        <img src={require('./gif/techshop.gif')} alt="TechShop" className="project-image" />
+                      ) : id === 3 ? (
+                        <img src={require('./gif/crypto.gif')} alt="Crypto" className="project-image" />
                       ) : (
                         <img src={`https://placehold.co/300x180?text=Website+${id}`} alt={`Website ${id}`} className="project-image" />
                       )}
                       <div className="project-info">
-                        <h3 style={id === 1 ? { color: '#00f2fe', marginTop: '1.5rem', marginBottom: '0.7rem' } : {}}>
-                          {id === 1 ? "Papa's Burger" : `Website ${id}`}
+                        <h3 style={(id === 1 || id === 2 || id === 3) ? { color: '#00f2fe', marginTop: 0, marginBottom: '-0.3rem' } : {}}>
+                          {id === 1 ? "Papa's Burger" : id === 2 ? 'TechShop' : id === 3 ? 'Crypto' : `Website ${id}`}
                         </h3>
                         <p>
                           {id === 1
                             ? 'Fast-food restaurant web app with interactive burger menu.'
-                            : `Descriere scurtă pentru website-ul ${id}.`}
+                            : id === 2
+                              ? 'Online electronics store with dedicated pages and interactive cart.'
+                              : id === 3
+                                ? 'Cryptocurrency price tracking and market analysis platform.'
+                                : `Descriere scurtă pentru website-ul ${id}.`}
                         </p>
                         <a
                           href={githubLinks[id - 1]}
@@ -108,13 +116,17 @@ function App() {
                       </div>
                     </div>
                     <div className="card-back">
-                      <h3 style={id === 1 ? { color: '#00f2fe', marginTop: '1.5rem', marginBottom: '0.7rem' } : {}}>
-                        {id === 1 ? 'Details' : `Detalii Website ${id}`}
+                      <h3 style={(id === 1 || id === 2 || id === 3) ? { color: '#00f2fe', marginTop: '1.5rem', marginBottom: '0.7rem' } : {}}>
+                        {id === 1 ? 'Details' : id === 2 ? 'Details' : id === 3 ? 'Details' : `Detalii Website ${id}`}
                       </h3>
                       <p>
                         {id === 1
                           ? 'Web application for a fast-food restaurant featuring an interactive burger menu, filtering, search, favorites, shopping cart, and reviews, built with HTML, CSS, and JavaScript.'
-                          : 'Tehnologii folosite, detalii suplimentare sau link-uri.'}
+                          : id === 2
+                            ? 'Web application for an electronics store featuring category pages for phones, tablets, laptops, and accessories, advanced product search, interactive shopping cart, and order confirmation. Built with HTML, CSS, and JavaScript.'
+                            : id === 3
+                              ? 'Custom cryptocurrency token integrated into the platform, enabling secure transactions, wallet storage, and real-time balance updates. The token supports transfers, trading, and portfolio management, and is implemented as a smart contract on the blockchain. Built with Solidity, JavaScript, and web3 technologies.'
+                              : 'Tehnologii folosite, detalii suplimentare sau link-uri.'}
                       </p>
                     </div>
                   </div>
@@ -202,8 +214,18 @@ function App() {
                       </div>
                     </div>
                     <div className="card-back">
-                      <h3>Detalii CyberSecurity {id}</h3>
-                      <p>Tehnologii folosite, detalii suplimentare sau link-uri.</p>
+                      <h3 style={(id === 1 || id === 2 || id === 3) ? { color: '#00f2fe', marginTop: '1.5rem', marginBottom: '0.7rem' } : {}}>
+                        {id === 1 ? 'Details' : id === 2 ? 'Details' : id === 3 ? 'Details' : `Detalii Website ${id}`}
+                      </h3>
+                      <p>
+                        {id === 1
+                          ? 'Web application for a fast-food restaurant featuring an interactive burger menu, filtering, search, favorites, shopping cart, and reviews, built with HTML, CSS, and JavaScript.'
+                          : id === 2
+                            ? 'Web application for an electronics store featuring category pages for phones, tablets, laptops, and accessories, advanced product search, interactive shopping cart, and order confirmation. Built with HTML, CSS, and JavaScript.'
+                            : id === 3
+                              ? 'Custom cryptocurrency token integrated into the platform, enabling secure transactions, wallet storage, and real-time balance updates. The token supports transfers, trading, and portfolio management, and is implemented as a smart contract on the blockchain. Built with Solidity, JavaScript, and web3 technologies.'
+                              : 'Tehnologii folosite, detalii suplimentare sau link-uri.'}
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -232,4 +254,4 @@ function App() {
   );
 }
 
-export default App; 
+export default App;

@@ -285,14 +285,14 @@
   margin-right: auto;
 }
 
-/* Distanță mai mică între imagine și titlul Papa's Burger */
-.project-card:first-child .project-image {
+/* Elimin aceste reguli pentru aliniere identică la toate cardurile */
+/* .project-card:first-child .project-image {
   margin-bottom: 0;
 }
-
-.project-card:first-child .project-info h3 {
-  margin-top: 0.3rem !important;
-}
+.project-card:nth-child(2) .project-image {
+  margin-bottom: 0;
+  margin-top: 2rem;
+} */
 
 .project-info {
   width: 100%;
