@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import NavBar from './components/NavBar';
 
@@ -32,25 +32,44 @@ function App() {
     'https://github.com/user/website6',
   ];
 
+  // Typing effect pentru 'iberiu' cu scriere și ștergere în buclă
+  useEffect(() => {
+    const text = 'iberiu';
+    let i = 0;
+    let isDeleting = false;
+    const speed = 120;
+    const deleteSpeed = 60;
+    const pause = 900;
+    const el = document.getElementById('typing-tiberiu');
+    if (!el) return;
+    el.textContent = '';
+    function type() {
+      if (!isDeleting && i <= text.length) {
+        el.textContent = text.substring(0, i);
+        i++;
+        if (i > text.length) setTimeout(() => { isDeleting = true; type(); }, pause);
+        else setTimeout(type, speed);
+      } else if (isDeleting && i >= 0) {
+        el.textContent = text.substring(0, i);
+        i--;
+        if (i < 0) { isDeleting = false; setTimeout(type, pause); }
+        else setTimeout(type, deleteSpeed);
+      }
+    }
+    type();
+  }, []);
+
   return (
     <div className="App">
       <NavBar />
       <main className="main-content">
         {/* Prima pagină - Home */}
         <section id="home" className="home-section">
-          <div className="home-content">
-            <div className="left-section">
-              <h1 className="gradient-text">Full-Stack Web Developer</h1>
-              <p className="home-description">
-                Dezvolt aplicații web moderne și performante, 
-                de la frontend la backend, cu tehnologiile de ultimă generație.
-              </p>
-            </div>
-            <div className="right-section">
-              <div className="hero-image">
-                {/* Aici poți adăuga o imagine sau un element vizual */}
-              </div>
-            </div>
+          <div className="home-content" style={{ flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', width: '100%', minHeight: '60vh', display: 'flex' }}>
+            <h2 style={{ color: '#fff', fontSize: '2.5rem', fontWeight: 700, marginBottom: 0, marginTop: 0, width: '100%' }}>
+              Hello, I'm <span style={{ color: '#00f2fe' }}>T</span><span id="typing-tiberiu" style={{ color: '#00f2fe' }}></span>
+            </h2>
+            <h1 style={{ color: '#00f2fe', fontSize: '3.5rem', fontWeight: 700, marginBottom: 0, marginTop: 0, width: '100%' }}>Full-Stack Web Developer</h1>
           </div>
           <div className="mouse_scroll">
             <div className="mouse">
