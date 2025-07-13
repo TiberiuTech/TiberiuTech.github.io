@@ -86,11 +86,11 @@ function App() {
                       ) : id === 3 ? (
                         <img src={require('./gif/crypto.gif')} alt="Crypto" className="project-image" />
                       ) : (
-                        <img src={`https://placehold.co/300x180?text=Website+${id}`} alt={`Website ${id}`} className="project-image" />
+                        <img src={`https://placehold.co/300x180?text=Coming+soon`} alt="Coming soon" className="project-image" />
                       )}
                       <div className="project-info">
-                        <h3 style={(id === 1 || id === 2 || id === 3) ? { color: '#00f2fe', marginTop: 0, marginBottom: '-0.3rem' } : {}}>
-                          {id === 1 ? "Papa's Burger" : id === 2 ? 'TechShop' : id === 3 ? 'Crypto' : `Website ${id}`}
+                        <h3 style={(id <= 3) ? { color: '#00f2fe', marginTop: 0, marginBottom: '-0.3rem' } : { color: '#00f2fe' }}>
+                          {id === 1 ? "Papa's Burger" : id === 2 ? 'TechShop' : id === 3 ? 'Crypto' : 'Coming soon'}
                         </h3>
                         <p>
                           {id === 1
@@ -99,7 +99,7 @@ function App() {
                               ? 'Online electronics store with dedicated pages and interactive cart.'
                               : id === 3
                                 ? 'Cryptocurrency price tracking and market analysis platform.'
-                                : `Descriere scurtă pentru website-ul ${id}.`}
+                                : 'Coming soon'}
                         </p>
                         <a
                           href={githubLinks[id - 1]}
@@ -116,18 +116,14 @@ function App() {
                       </div>
                     </div>
                     <div className="card-back">
-                      <h3 style={(id === 1 || id === 2 || id === 3) ? { color: '#00f2fe', marginTop: '1.5rem', marginBottom: '0.7rem' } : {}}>
-                        {id === 1 ? 'Details' : id === 2 ? 'Details' : id === 3 ? 'Details' : `Detalii Website ${id}`}
-                      </h3>
-                      <p>
-                        {id === 1
-                          ? 'Web application for a fast-food restaurant featuring an interactive burger menu, filtering, search, favorites, shopping cart, and reviews, built with HTML, CSS, and JavaScript.'
-                          : id === 2
-                            ? 'Web application for an electronics store featuring category pages for phones, tablets, laptops, and accessories, advanced product search, interactive shopping cart, and order confirmation. Built with HTML, CSS, and JavaScript.'
-                            : id === 3
-                              ? 'Custom cryptocurrency token integrated into the platform, enabling secure transactions, wallet storage, and real-time balance updates. The token supports transfers, trading, and portfolio management, and is implemented as a smart contract on the blockchain. Built with Solidity, JavaScript, and web3 technologies.'
-                              : 'Tehnologii folosite, detalii suplimentare sau link-uri.'}
-                      </p>
+                      <h3 style={{ color: '#00f2fe', marginTop: '1.5rem', marginBottom: '0.7rem' }}>{id <= 3 ? (id === 1 ? 'Details' : id === 2 ? 'Details' : 'Details') : 'Coming soon'}</h3>
+                      <p>{id <= 3
+                        ? (id === 1
+                            ? 'Web application for a fast-food restaurant featuring an interactive burger menu, filtering, search, favorites, shopping cart, and reviews, built with HTML, CSS, and JavaScript.'
+                            : id === 2
+                              ? 'Web application for an electronics store featuring category pages for phones, tablets, laptops, and accessories, advanced product search, interactive shopping cart, and order confirmation. Built with HTML, CSS, and JavaScript.'
+                              : 'Custom cryptocurrency token integrated into the platform, enabling secure transactions, wallet storage, and real-time balance updates. The token supports transfers, trading, and portfolio management, and is implemented as a smart contract on the blockchain. Built with Solidity, JavaScript, and web3 technologies.')
+                        : 'Coming soon'}</p>
                     </div>
                   </div>
                 </div>
@@ -151,10 +147,10 @@ function App() {
                 >
                   <div className="card-inner">
                     <div className="card-front">
-                      <img src={`https://placehold.co/300x180?text=Game+${id}`} alt={`Game ${id}`} className="project-image" />
+                      <img src={`https://placehold.co/300x180?text=Coming+soon`} alt="Coming soon" className="project-image" />
                       <div className="project-info">
-                        <h3>Game {id}</h3>
-                        <p>Descriere scurtă pentru jocul {id}.</p>
+                        <h3 style={id <= 3 ? { color: '#00f2fe' } : { color: '#00f2fe' }}>{id <= 3 ? `Game ${id}` : 'Coming soon'}</h3>
+                        <p>{id <= 3 ? `Descriere scurtă pentru jocul ${id}.` : 'Coming soon'}</p>
                         <a
                           href={githubLinks[id - 1]}
                           target="_blank"
@@ -170,8 +166,8 @@ function App() {
                       </div>
                     </div>
                     <div className="card-back">
-                      <h3>Detalii Game {id}</h3>
-                      <p>Tehnologii folosite, detalii suplimentare sau link-uri.</p>
+                      <h3 style={{ color: '#00f2fe', marginTop: '1.5rem', marginBottom: '0.7rem' }}>{id <= 3 ? `Detalii Game ${id}` : 'Coming soon'}</h3>
+                      <p>{id <= 3 ? `Detalii pentru jocul ${id}.` : 'Coming soon'}</p>
                     </div>
                   </div>
                 </div>
@@ -195,10 +191,10 @@ function App() {
                 >
                   <div className="card-inner">
                     <div className="card-front">
-                      <img src={`https://placehold.co/300x180?text=Cyber+${id}`} alt={`CyberSecurity ${id}`} className="project-image" />
+                      <img src={`https://placehold.co/300x180?text=Coming+soon`} alt="Coming soon" className="project-image" />
                       <div className="project-info">
-                        <h3>CyberSecurity {id}</h3>
-                        <p>Descriere scurtă pentru proiectul de securitate {id}.</p>
+                        <h3 style={{ color: '#00f2fe', marginTop: 0, marginBottom: '-0.3rem' }}>{'Coming soon'}</h3>
+                        <p>{'Coming soon'}</p>
                         <a
                           href={githubLinks[id - 1]}
                           target="_blank"
@@ -214,18 +210,8 @@ function App() {
                       </div>
                     </div>
                     <div className="card-back">
-                      <h3 style={(id === 1 || id === 2 || id === 3) ? { color: '#00f2fe', marginTop: '1.5rem', marginBottom: '0.7rem' } : {}}>
-                        {id === 1 ? 'Details' : id === 2 ? 'Details' : id === 3 ? 'Details' : `Detalii Website ${id}`}
-                      </h3>
-                      <p>
-                        {id === 1
-                          ? 'Web application for a fast-food restaurant featuring an interactive burger menu, filtering, search, favorites, shopping cart, and reviews, built with HTML, CSS, and JavaScript.'
-                          : id === 2
-                            ? 'Web application for an electronics store featuring category pages for phones, tablets, laptops, and accessories, advanced product search, interactive shopping cart, and order confirmation. Built with HTML, CSS, and JavaScript.'
-                            : id === 3
-                              ? 'Custom cryptocurrency token integrated into the platform, enabling secure transactions, wallet storage, and real-time balance updates. The token supports transfers, trading, and portfolio management, and is implemented as a smart contract on the blockchain. Built with Solidity, JavaScript, and web3 technologies.'
-                              : 'Tehnologii folosite, detalii suplimentare sau link-uri.'}
-                      </p>
+                      <h3 style={{ color: '#00f2fe', marginTop: '1.5rem', marginBottom: '0.7rem' }}>{'Coming soon'}</h3>
+                      <p>{'Coming soon'}</p>
                     </div>
                   </div>
                 </div>
